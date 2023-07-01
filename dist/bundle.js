@@ -25,11 +25,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _Delivery_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3);
+/* harmony import */ var _altText_txt__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4);
+
 
 
 function addImage() {
   const img = document.createElement('img');
-  img.alt = 'Delivery';
+  img.alt = _altText_txt__WEBPACK_IMPORTED_MODULE_1__;
   img.width = 300;
   img.src = _Delivery_png__WEBPACK_IMPORTED_MODULE_0__;
 
@@ -45,6 +47,12 @@ function addImage() {
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = __webpack_require__.p + "ce7a5c201e209827a069.png";
+
+/***/ }),
+/* 4 */
+/***/ ((module) => {
+
+module.exports = "Delivery alt text ";
 
 /***/ })
 /******/ 	]);
