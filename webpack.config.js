@@ -18,7 +18,7 @@ module.exports = {
         type: 'asset',
         parser: {
           dataUrlCondition: {
-            maxSize: 3 * 1024, // 3 kilobytes 3킬로 바이트를 기준으로 asset/resource, asset/inline 으로 할지 정해진다.
+            maxSize: 3 * 1024,
           },
         },
       },
@@ -51,6 +51,11 @@ module.exports = {
     new TerserPlugin(),
     new MiniCssExtractPlugin({ filename: 'styles.[contenthash].css' }),
     new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      title: 'Hello world',
+      meta: {
+        description: 'Some description',
+      },
+    }),
   ],
 };
