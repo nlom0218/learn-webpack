@@ -1,5 +1,4 @@
 const path = require('path');
-const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -10,17 +9,12 @@ module.exports = {
     filename: 'bundle.[contenthash].js',
     path: path.resolve(__dirname, './dist'),
   },
-  mode: 'none',
+  mode: 'production',
   module: {
     rules: [
       {
         test: /\.(png|jpg)$/,
         type: 'asset',
-        parser: {
-          dataUrlCondition: {
-            maxSize: 3 * 1024,
-          },
-        },
       },
       {
         test: /\.txt/,
@@ -52,7 +46,6 @@ module.exports = {
     ],
   },
   plugins: [
-    new TerserPlugin(),
     new MiniCssExtractPlugin({ filename: 'styles.[contenthash].css' }),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
