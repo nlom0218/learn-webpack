@@ -3,9 +3,12 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: {
+    'hello-world': './src/hello-world.js',
+    delivery: './src/delivery.js',
+  },
   output: {
-    filename: 'bundle.js',
+    filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, './dist'),
   },
   mode: 'development',
