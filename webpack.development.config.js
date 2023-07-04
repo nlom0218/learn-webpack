@@ -60,9 +60,20 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
+      filename: 'hello-world.html',
+      chunks: ['hello-world'],
       title: 'Hello world',
-      template: 'src/index.hbs',
-      description: 'Some description',
+      template: 'src/page-template.hbs',
+      description: 'Hello World',
+      minify: false,
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'delivery.html',
+      chunks: ['delivery'],
+      title: 'Delivery',
+      template: 'src/page-template.hbs',
+      description: 'Delivery',
+      minify: false,
     }),
   ],
 };

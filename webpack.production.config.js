@@ -5,6 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
+    // chunk 이름
     'hello-world': './src/hello-world.js',
     delivery: './src/delivery.js',
   },
@@ -52,9 +53,20 @@ module.exports = {
     new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' }),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
+      filename: 'hello-world.html',
+      chunks: ['hello-world'],
       title: 'Hello world',
-      template: 'src/index.hbs',
-      description: 'Some description',
+      template: 'src/page-template.hbs',
+      description: 'Hello World',
+      minify: false,
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'delivery.html',
+      chunks: ['delivery'],
+      title: 'Delivery',
+      template: 'src/page-template.hbs',
+      description: 'Delivery',
+      minify: false,
     }),
   ],
 };
